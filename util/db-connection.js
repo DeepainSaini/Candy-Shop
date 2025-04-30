@@ -1,0 +1,18 @@
+const {Sequelize} = require('sequelize');
+
+const sequelize = new Sequelize('testdb','root','964999',{
+
+    host : 'localhost',
+    dialect : 'mysql'
+});
+
+   (async ()=>{
+    try{
+        await sequelize.authenticate();
+        console.log('connection has been established');
+    } catch(error){
+    console.log(error);
+    }
+})();
+
+module.exports = sequelize;
